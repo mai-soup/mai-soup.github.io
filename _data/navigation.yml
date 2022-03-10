@@ -1,0 +1,10 @@
+- name: Home
+  link: /
+- name: About
+  link: /about.html
+# - name: Thoughts
+#   link: /blog.html
+# - name: To-Do
+#   link: /todo.html
+- name: Bookshelf
+  link: /bookshelf.html

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{{ '/images/favicon.png' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/gruvbox-light.css' | prepend: site.baseurl }}">
+    <title>#{{ page.title | markdownify | strip_html }}</title>
+</head>
+<body class="py-3">
+    <div class="container-fluid" id="container-main">
+        {% include navigation.html %}
+        <ul class="ul-no-dec">
+        {% for post in site.tags[page.tag] %}
+            <li>
+            <div class="row text-start">
+                <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h2>
+                <p class="mx-1"><strong>tl;dr: </strong>{{ post.excerpt | remove: '<p>' | remove: '</p>' | remove: '<blockquote>' | remove: '</blockquote>'}}</p>
+            </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
