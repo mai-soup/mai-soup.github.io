@@ -45,6 +45,14 @@ a:hover { background-color: #2B3A67; }
 
 #post-content figure.third > * { height: auto; text-align: center; }
 
+#gallery-container { margin: 0; padding: 0; box-sizing: border-box; min-height: 100vh; overflow-x: hidden; }
+
+#gallery-container #gallery-grid { justify-content: center; align-items: center; margin-top: 10px; position: absolute; width: 70%; max-width: 80ch; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 230px)); gap: 10px; }
+
+#gallery-container #gallery-grid img { width: 230px; height: 230px; object-fit: cover; object-position: center; }
+
+#image-info { margin-top: 10px; text-align: center; }
+
 /*! Bootstrap v5.0.2 (https://getbootstrap.com/) Copyright 2011-2021 The Bootstrap Authors Copyright 2011-2021 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) */
 :root { --bs-blue: #0d6efd; --bs-indigo: #6610f2; --bs-purple: #6f42c1; --bs-pink: #d63384; --bs-red: #dc3545; --bs-orange: #fd7e14; --bs-yellow: #ffc107; --bs-green: #198754; --bs-teal: #20c997; --bs-cyan: #0dcaf0; --bs-white: #fff; --bs-gray: #6c757d; --bs-gray-dark: #343a40; --bs-primary: #2B3A67; --bs-secondary: #6c757d; --bs-success: #198754; --bs-info: #0dcaf0; --bs-warning: #ffc107; --bs-danger: #dc3545; --bs-light: #f8f9fa; --bs-dark: #212529; --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); }
 

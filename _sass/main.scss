@@ -17,6 +17,10 @@ $headings-font-family: "Roboto Mono", monospace;
 $pre-color: $color-accent-dark;
 $code-color: $color-accent-dark;
 
+// gallery grid variables
+$image-size: 230px;
+$grid-gap: 10px;
+
 #container-main {
     width: 70%;
     max-width: 80ch;
@@ -138,4 +142,37 @@ a {
         height: auto;
         text-align: center;
     }
+}
+
+#gallery-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+    #gallery-grid {
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        position: absolute;
+        width: 70%;
+        max-width: 80ch;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax($image-size, $image-size));
+        gap: $grid-gap;
+
+        img {
+            width: $image-size;
+            height: $image-size;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+#image-info {
+    margin-top: 10px;
+    text-align: center;
 }
