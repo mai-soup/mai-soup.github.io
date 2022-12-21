@@ -1,0 +1,30 @@
+---
+title: Gallery
+---
+<div id="gallery-container">
+    <div id="gallery-grid">
+        {% for image in site.static_files reversed %}
+            {% if image.path contains 'images/gallery' %}
+                <a href="{{ image.path | split: '/' | last | remove: '.jpg' | prepend: '/gallery/view/' | prepend: site.baseurl }}">
+                    <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                </a>
+            {% endif %}
+        {% endfor %}
+        <!-- <img src="{{ '/images/gallery/1.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/2.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/3.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/4.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/1.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/2.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/3.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/4.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/1.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/2.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/3.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/4.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/1.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/2.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/3.jpg' | prepend: site.baseurl }}" />
+        <img src="{{ '/images/gallery/4.jpg' | prepend: site.baseurl }}" /> -->
+    </div>
+</div>

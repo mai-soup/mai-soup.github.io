@@ -8,3 +8,5 @@
 #   link: /todo.html
 - name: Bookshelf
   link: /bookshelf.html
+- name: Gallery
+  link: /gallery
