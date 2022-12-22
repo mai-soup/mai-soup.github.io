@@ -53,6 +53,18 @@ a:hover { background-color: #2B3A67; }
 
 #image-info { margin-top: 10px; text-align: center; }
 
+section.bio { padding: 1em 0 1em 2em; display: grid; grid-template-columns: 1fr 2fr; column-gap: 10px; }
+
+section.bio div.pfp { width: 8em; height: 8em; border-radius: 50%; }
+
+section.bio div.pfp img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+section.bio div.profile-info p.username { font-size: 1.5em; display: inline-block; padding-right: 1em; }
+
+section.bio div.profile-info button { background-color: #2B3A67; color: #FFFBFC; font-weight: bold; width: 8em; height: 2em; border: unset; border-radius: 5px; }
+
+section.bio div.profile-info p.name { font-weight: 600; margin-bottom: 0; }
+
 /*! Bootstrap v5.0.2 (https://getbootstrap.com/) Copyright 2011-2021 The Bootstrap Authors Copyright 2011-2021 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) */
 :root { --bs-blue: #0d6efd; --bs-indigo: #6610f2; --bs-purple: #6f42c1; --bs-pink: #d63384; --bs-red: #dc3545; --bs-orange: #fd7e14; --bs-yellow: #ffc107; --bs-green: #198754; --bs-teal: #20c997; --bs-cyan: #0dcaf0; --bs-white: #fff; --bs-gray: #6c757d; --bs-gray-dark: #343a40; --bs-primary: #2B3A67; --bs-secondary: #6c757d; --bs-success: #198754; --bs-info: #0dcaf0; --bs-warning: #ffc107; --bs-danger: #dc3545; --bs-light: #f8f9fa; --bs-dark: #212529; --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); }
 
