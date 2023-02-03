@@ -25,7 +25,7 @@ nav { font-family: "Roboto Mono", monospace; }
 
 nav .nav-link-current { color: #FFFBFC; background-color: #C05746; }
 
-a { padding: 3px; }
+a { display: inline-block; padding: 3px; }
 
 a:hover { background-color: #2B3A67; }
 

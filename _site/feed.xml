@@ -1,1 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://mai-soup.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mai-soup.github.io/" rel="alternate" type="text/html" /><updated>2022-12-22T16:50:20+00:00</updated><id>https://mai-soup.github.io/feed.xml</id><title type="html">Mai Garais</title><subtitle>Hey there! I&apos;m Mai - a Computer Science student at the University of Leeds.</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://mai-soup.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mai-soup.github.io/" rel="alternate" type="text/html" /><updated>2023-02-03T15:37:09+00:00</updated><id>https://mai-soup.github.io/feed.xml</id><title type="html">Mai Garais</title><subtitle>Hey there! I&apos;m Mai - a Computer Science student at the University of Leeds.</subtitle><entry><title type="html">The Simplest Way to Keep Track of Your Tasks</title><link href="https://mai-soup.github.io/2023/02/03/task-tracking.html" rel="alternate" type="text/html" title="The Simplest Way to Keep Track of Your Tasks" /><published>2023-02-03T00:00:00+00:00</published><updated>2023-02-03T00:00:00+00:00</updated><id>https://mai-soup.github.io/2023/02/03/task-tracking</id><content type="html" xml:base="https://mai-soup.github.io/2023/02/03/task-tracking.html">&lt;p&gt;It is incredibly easy to get lost in a mountainous to-do list as a student.&lt;/p&gt;
+
+&lt;p&gt;I mean, we have a schedule for lectures, labs, and tutorials, during which we keep getting new assessments, reading material, reports to write, projects… not to mention revising one’s own notes, which is usually left to right before the exams week, since there’s no time to do it before then. The fact that some of these tasks get forgotten or we misremember an assignment’s deadline is inevitable. Or is it?&lt;/p&gt;
+
+&lt;p&gt;Being a good student isn’t about studying excessive amounts of time (in fact, if you decide to grind for entire days, you’re more likely to only appear productive instead of &lt;em&gt;being&lt;/em&gt; productive and therefore fall even further behind - Parkinson’s law!), and it isn’t about magically managing to go through all the supplementary material that your professor has ever mentioned either. It is about being able to keep track of what needs to be done, prioritising, having a plan, and then being ready to change said plan when life throws something your way, because it always does.&lt;/p&gt;
+
+&lt;p&gt;I recently re-read Cal Newport’s &lt;em&gt;How to Become a Straight-A Student&lt;/em&gt;. While most of the book is a bit dated for the digital age and tailored to the American higher education system, it contains a guide for a task management workflow which I’ve used since high school, when I first read it. It is extremely simple, low-effort, and easy to get started with.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-2-parts-of-the-system&quot;&gt;The 2 parts of the system&lt;/h2&gt;
+
+&lt;h3 id=&quot;the-calendar&quot;&gt;The calendar&lt;/h3&gt;
+
+&lt;p&gt;The choice as to physical or digital is up to you, as it’s not something the system expects you to have on the go anyway - I’ve used both with success. It does, however, need enough space to record several items per day, and it needs to be accessible to you for a few minutes on a daily basis, preferably either in the morning or evening.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-list&quot;&gt;The list&lt;/h3&gt;
+
+&lt;p&gt;Something that you’ll be able to carry around with you all day to jot down whatever comes up. For me, a pen and pocket-sized piece of paper work better than the notes app on my phone, since there’s less friction in getting to writing, but feel free to experiment and find whatever’s easiest for you.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;p&gt;If you’re only just starting, put down all the to-dos and deadlines floating around in your brain in the calendar (more on &lt;em&gt;how&lt;/em&gt; to do that in a minute). We want to free up space in your brain for studying-related information. You may not be able to do all of this immediately, don’t spend too much time trying to rummage through your brain for some forgotten task that you definitely had. Put down what you remember, the rest will come to you later.&lt;/p&gt;
+
+&lt;p&gt;Throughout the day, whenever you get a new task/assignment/deadline, put it down on your list. The next time you look at your calendar (plan for this to happen once daily), transfer the items from your list to the calendar, and take a few minutes to plan the next day. Write down the next day’s plan on the next day’s list - I’ve found that using two columns, one for the day’s plan, another to jot down “incoming” tasks, works well.&lt;/p&gt;
+
+&lt;p&gt;Don’t overthink about what day you put future items on - of course, you will have things like deadlines that are set in stone, but most other items can be moved around and reorganised - and in fact I encourage you to get comfortable with plans being fluid, even on a daily scale, as things tend to come up and change quite often. Don’t bother with trying to figure out the “optimal” amount of tasks for a future day either, as plans might change. You’ll deal with figuring out how much you can realistically accomplish in the morning of, or the evening before, that day. The rest can be moved, and you shouldn’t assume that every hour that looks free now will stay such.&lt;/p&gt;
+
+&lt;p&gt;Another thing I strongly encourage is assigning a specific time and duration to each task, partly to get better at estimating how long things take and how much you can actually accomplish in a day, partly to not let one task expand to fill your whole day. Don’t get into too much detail with it, if you have several small tasks that take only a few minutes, instead of getting very specific with the times and stressing yourself out trying to keep up with them, just group them together, for instance, “11.00-12.15: mail application, buy new pens, get a gift for friend, obtain a copy of registration certificate from university”. Remember to account for commuting, meals, lectures, meetings, and, most importantly, breaks.&lt;/p&gt;
+
+&lt;p&gt;Another beautiful thing about this system, asides from its simplicity, is that if for whatver reason you haven’t been keeping track of your to-dos for a while, it’s easy to get back on it. Dump everything on the calendar. Piece of paper. Two columns. You’ve got this.&lt;/p&gt;
+
+&lt;h2 id=&quot;now-grab-a-piece-of-paper&quot;&gt;Now, grab a piece of paper&lt;/h2&gt;
+
+&lt;p&gt;Start actually using this system, instead of waiting until something else has been forgotten. Trust me. Less stuff to keep track of in your head and less anxiety about missing something means you have more braincells to spend on everything else.&lt;/p&gt;
+
+&lt;p&gt;To help you out, my friend Ron over on &lt;a href=&quot;https://noodlesdesigns.gumroad.com/&quot;&gt;noodle’s designs&lt;/a&gt; has made a &lt;a href=&quot;https://noodlesdesigns.gumroad.com/l/daily-planner&quot;&gt;template for the daily list&lt;/a&gt; to print out or use in Goodnotes. No reason not to get it.&lt;/p&gt;
+
+&lt;p&gt;Really, go. Do it.&lt;/p&gt;</content><author><name></name></author><summary type="html">You need a piece of paper and two columns.</summary></entry></feed>
