@@ -5,7 +5,7 @@ excerpt: "You need a piece of paper and two columns."
 ---
 It is incredibly easy to get lost in a mountainous to-do list as a student.
 
-I mean, we have a schedule for lectures, labs, and tutorials, during which we keep getting new assessments, reading material, reports to write, projects... not to mention revising one's own notes, which is usually left to right before the exams week, since there's no time to do it before then. The fact that some of these tasks get forgotten or we misremember an assignment's deadline is inevitable. Or is it?
+I mean, we have a schedule for lectures, labs, and tutorials, during which we keep getting new assessments, reading material, reports to write, projects... not to mention revising one's own notes, which is usually left until right before the exams week, since there's no time to do it before then. The fact that some of these tasks get forgotten or we misremember an assignment's deadline is inevitable. Or is it?
 
 Being a good student isn't about studying excessive amounts of time (in fact, if you decide to grind for entire days, you're more likely to only appear productive instead of _being_ productive and therefore fall even further behind - Parkinson's law!), and it isn't about magically managing to go through all the supplementary material that your professor has ever mentioned either. It is about being able to keep track of what needs to be done, prioritising, having a plan, and then being ready to change said plan when life throws something your way, because it always does.
 
