@@ -15,6 +15,16 @@ My current work-in-progress: a site for users to browse campgrounds and leave re
 
 [View the source code on GitHub.](https://github.com/mai-soup/yelpcamp)
 
+## My personal website
+
+![The landing page of my website](/images/projects/mai-soup.png){:class="img-fluid"}
+
+The website you're on was built from scratch by me! I had some experience with static site generators such as Hugo, but wanted to try Jekyll out, so I thought an autobiographical website was as good a chance to do that as any. Design-wise it was inspired by my love of retro technology and digital minimalism.
+
+**Technologies**: HTML, CSS, SCSS, Bootstrap, Jekyll
+
+[View the source code on GitHub.](https://github.com/mai-soup/mai-soup.github.io)
+
 ## Madness of Warblade
 
 ![A screenshot of the game](/images/projects/madness.png){:class="img-fluid"}
