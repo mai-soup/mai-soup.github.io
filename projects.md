@@ -11,9 +11,11 @@ Here's the various projects I am working/have worked on, and the links to their 
 
 My current work-in-progress: a site for users to browse campgrounds and leave reviews on them, as well as add new campgrounds to the database, including images to be displayed which are stored on Cloudinary. Features include authentication, authorisation, sessions/cookies, (multiple) file upload, cluster and individual campground maps, form validation (both client- and server-side), CSS transitions to make the site fun to use, among others.
 
-**Technologies**: HTML, CSS, Node.js, Express.js, EJS, MongoDB, Bootstrap, Mapbox API
+**Technologies**: HTML, CSS, Node.js, Express.js, EJS, MongoDB, Bootstrap, Mapbox API, Cloudinary
 
 [View the source code on GitHub.](https://github.com/mai-soup/yelpcamp)
+
+Though not finished, there is a [deployed version](https://yelpcamp-aqzy.onrender.com/), however be aware that it might initially take a couple minutes to load and have some 404s for the first few seconds after it's first rendered while the server fully boots up. Drawbacks of using free tiers of appplication hosting - all the resources are being throttled! If it still doesn't work properly after 3 minutes or so, email me at mai-soup [at] mailfence [dot] com.
 
 ## My personal website
 
@@ -44,4 +46,4 @@ While working for CUBE Systems and CUBE Mobile, I worked on several applications
 * [Latvijas Pasts](https://play.google.com/store/apps/details?id=lv.pasts.app), the official app for Latvia's main state-owned postal service provider (implementing parcel tracking in-app),
 * [Tolders](https://play.google.com/store/apps/details?id=lv.tolders), an app for finding discounts (moving to a new version of the API, design changes).
 
-For a full list, as well as my CV, contact me at mai-soup [at] mailfence [dot] com.
+For a full (albeit slightly less detailed) list, as well as my CV, contact me at mai-soup [at] mailfence [dot] com.
