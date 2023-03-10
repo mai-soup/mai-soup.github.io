@@ -1,6 +1,7 @@
 ---
 title: Projects
 ---
+
 # Projects
 
 Here's the various projects I am working/have worked on, and the links to their repositories.
@@ -16,6 +17,18 @@ My current work-in-progress: a site for users to browse campgrounds and leave re
 [View the source code on GitHub.](https://github.com/mai-soup/yelpcamp)
 
 Though not finished, there is a [deployed version](https://yelpcamp-aqzy.onrender.com/), however be aware that it might initially take a couple minutes to load and have some 404s for the first few seconds after it's first rendered while the server fully boots up. Drawbacks of using free tiers of appplication hosting - all the resources are being throttled! If it still doesn't work properly after 3 minutes or so, email me at mai-soup [at] mailfence [dot] com.
+
+## react colour picker
+
+![react colour picker's landing page](/images/projects/react-colour-picker.png){:class="img-fluid"}
+
+My first project using React! View colour palettes at various lightness levels as well as make your own. Made as part of Colt Steele's React bootcamp, though I decided to use functional components and hooks instead of class components, as well as had to switch out a few outdated packages, so while my end result largely looks the same, the code is quite different. I'm still working on polishing up the UI design and layout, but the app is functional and responsive too!
+
+**Technologies**: HTML, CSS, React.js, React Router, Material UI, MUI's `styled` utility
+
+[View the source code on GitHub.](https://github.com/mai-soup/react-colour-picker)
+
+There is an [online version](https://react-colour-picker.vercel.app/) available (data is only saved in your browser's `localStorage`, so feel free to play around). If anything is not working properly, let me know at mai-soup [at] mailfence [dot] com.
 
 ## My personal website
 
@@ -42,8 +55,9 @@ The development has currently slowed down, as I am focusing more on level design
 ## Various Android projects
 
 While working for CUBE Systems and CUBE Mobile, I worked on several applications in Android Java, including:
-* [Trains in Latvia](https://play.google.com/store/apps/details?id=lv.amberphone.pasazieruvilciens), the official app for Latvia's public rail transport service provider (bugfixes and issues with ticket PDF generation),
-* [Latvijas Pasts](https://play.google.com/store/apps/details?id=lv.pasts.app), the official app for Latvia's main state-owned postal service provider (implementing parcel tracking in-app),
-* [Tolders](https://play.google.com/store/apps/details?id=lv.tolders), an app for finding discounts (moving to a new version of the API, design changes).
+
+- [Trains in Latvia](https://play.google.com/store/apps/details?id=lv.amberphone.pasazieruvilciens), the official app for Latvia's public rail transport service provider (bugfixes and issues with ticket PDF generation),
+- [Latvijas Pasts](https://play.google.com/store/apps/details?id=lv.pasts.app), the official app for Latvia's main state-owned postal service provider (implementing parcel tracking in-app),
+- [Tolders](https://play.google.com/store/apps/details?id=lv.tolders), an app for finding discounts (moving to a new version of the API, design changes).
 
 For a full (albeit slightly less detailed) list, as well as my CV, contact me at mai-soup [at] mailfence [dot] com.
