@@ -30,6 +30,18 @@ My first project using React! View colour palettes at various lightness levels a
 
 There is an [online version](https://react-colour-picker.vercel.app/) available (data is only saved in your browser's `localStorage`, so feel free to play around). If anything is not working properly, let me know at mai-soup [at] mailfence [dot] com.
 
+## Hangman
+
+![Screenshot of the Hangman app](/images/projects/hangman.png){:class="img-fluid"}
+
+The classic game, made using React and Tailwind in an attempt to get familiar with the CSS framework. Making it was a lot of fun, and I spent way too much time "testing" the app out once the functionality was working, haha.
+
+**Technologies**: HTML, CSS, React.js, Tailwind
+
+[View the source code on GitHub.](https://github.com/mai-soup/hangman)
+
+You can play it yourself [here](https://hangman-two-psi.vercel.app/)!
+
 ## My personal website
 
 ![The landing page of my website](/images/projects/mai-soup.png){:class="img-fluid"}
