@@ -42,6 +42,16 @@ The classic game, made using React and Tailwind in an attempt to get familiar wi
 
 You can play it yourself [here](https://hangman-two-psi.vercel.app/)!
 
+## Various Frontend Mentor Projects
+
+![Screenshot of my Frontend Mentor profile, showing a few challenges](/images/projects/frontend-mentor.png){:class="img-fluid"}
+
+As there are several of these and they are smaller than my other projects, I made a separate page to showcase them.
+
+[View the projects](/frontend-mentor-projects.html)
+
+[Check out my Frontend Mentor profile](https://www.frontendmentor.io/profile/mai-soup)
+
 ## My personal website
 
 ![The landing page of my website](/images/projects/mai-soup.png){:class="img-fluid"}
