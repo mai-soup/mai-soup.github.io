@@ -4,7 +4,7 @@ title: Projects
 
 # Projects
 
-Here's the various projects I am working/have worked on, and the links to their repositories.
+**Psst!** I know the UX of this page as a portfolio isn't the best - a new one is in the works, and there is a [live version](https://portfolio-mai-soup.vercel.app/) being updated regularly as I keep writing code for it. I'm keeping this page here until it's done, though, just to have a more "visual" spot to showcase my work.
 
 ## YelpCamp
 
