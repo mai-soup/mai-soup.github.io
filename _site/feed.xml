@@ -1,4 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://mai-soup.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mai-soup.github.io/" rel="alternate" type="text/html" /><updated>2023-03-24T09:57:38+00:00</updated><id>https://mai-soup.github.io/feed.xml</id><title type="html">Maijs Garais</title><subtitle>Hey there! I&apos;m Maijs - a frontend developer with experience in native Android development, using my technical knowledge to create seamless experiences across platforms. Latvian, based in Northern England.</subtitle><entry><title type="html">The Simplest Way to Keep Track of Your Tasks</title><link href="https://mai-soup.github.io/2023/02/03/task-tracking.html" rel="alternate" type="text/html" title="The Simplest Way to Keep Track of Your Tasks" /><published>2023-02-03T00:00:00+00:00</published><updated>2023-02-03T00:00:00+00:00</updated><id>https://mai-soup.github.io/2023/02/03/task-tracking</id><content type="html" xml:base="https://mai-soup.github.io/2023/02/03/task-tracking.html">&lt;p&gt;It is incredibly easy to get lost in a mountainous to-do list as a student.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://mai-soup.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mai-soup.github.io/" rel="alternate" type="text/html" /><updated>2023-06-26T16:33:13+01:00</updated><id>https://mai-soup.github.io/feed.xml</id><title type="html">Maijs Garais</title><subtitle>Hey there! I&apos;m Maijs - a frontend developer with experience in native Android development, using my technical knowledge to create seamless experiences across platforms. Latvian, based in Northern England.</subtitle><entry><title type="html">Array methods</title><link href="https://mai-soup.github.io/2023/06/26/array-mapping.html" rel="alternate" type="text/html" title="Array methods" /><published>2023-06-26T00:00:00+01:00</published><updated>2023-06-26T00:00:00+01:00</updated><id>https://mai-soup.github.io/2023/06/26/array-mapping</id><content type="html" xml:base="https://mai-soup.github.io/2023/06/26/array-mapping.html">&lt;blockquote&gt;
+  &lt;p&gt;A new coder with spirit, not shy,&lt;/p&gt;
+
+  &lt;p&gt;Finds array methods to untie.&lt;/p&gt;
+
+  &lt;p&gt;With functions unnamed,&lt;/p&gt;
+
+  &lt;p&gt;It’s a game unrestrained,&lt;/p&gt;
+
+  &lt;p&gt;But they’ll master it by and by.&lt;/p&gt;
+
+  &lt;p&gt;—ChatGPT&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ah, array methods, beloved. My archnemesis until just a couple months ago. There’s a few concepts to understand before it really “clicks”, so here we go, one at a time.&lt;/p&gt;
+
+&lt;h2 id=&quot;callback-functions&quot;&gt;Callback functions&lt;/h2&gt;
+
+&lt;p&gt;If we look at the MDN docs for any of the array methods (I’ll use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.prototype.map()&lt;/code&gt; as an example), we notice a few terms explaining the parameters for it:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/array-mapping/mdn-callback.png&quot; alt=&quot;Excerpt from MDN talking about the parameters for Array.map()&amp;quot;&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;callbackFn&lt;/code&gt; - callback function. In Higher Order Functions (functions which can take other functions as a parameter), the parameters that are functions are called callback functions. Imagine the HOF “calling it back”, being like hey, I’ve done my job, now it’s up to you. The HOF can invoke any of the callback functions provided to it.&lt;/p&gt;
+
+&lt;p&gt;The docs state that the callback function passed to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.map()&lt;/code&gt; is executed for each element in the array and the returned value is added to the new array, which will be returned by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.map()&lt;/code&gt; itself.&lt;/p&gt;
+
+&lt;p&gt;Let’s try writing our own mapping function to see what this really looks like in practice. I’ll add it as a property on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.prototype&lt;/code&gt; - doesn’t really matter what a prototype is right now, in short, I am making sure I can call it like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr.map()&lt;/code&gt;, same as the original map function. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt; keyword here refers to the array we call the method on.&lt;/p&gt;
+
+&lt;p&gt;For simplicity’s sake, right now I will only care about the first argument that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;callbackFn&lt;/code&gt; accepts, that is, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; - the current element we are looking at.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newMap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callbackFn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callbackFn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;newArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Right, let’s try using this new method on an array - don’t worry about the syntax of anything inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;newMap&lt;/code&gt; calls just yet, I just want to show that they both do the same thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/array-mapping/map-and-newmap.png&quot; alt=&quot;&amp;quot;A devtools console showing that the two methods produce the same output, mapping the array&apos;s elements to their squares.&amp;quot;&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So far so good. I was trying to square each element of the starting array, and both methods returned the expected result.&lt;/p&gt;
+
+&lt;h2 id=&quot;okay-but-what-does-callbackfn-look-like-really&quot;&gt;Okay, but what does &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;callbackFn&lt;/code&gt; look like really?&lt;/h2&gt;
+
+&lt;p&gt;Just like any other function. You just have to remember the parameters it takes - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt;, and…. uh whatever the third one was. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;array&lt;/code&gt;. Right. Never had to use that one, er…. I’ll take a bit of a leap and assume you can not worry about that one either. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; is the current element the mapping function is working on, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; is its index. So we could define our squaring function as something like&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squareElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Or, since we are not actually using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; parameter:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squareElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; parameter, if also passed to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squareElement&lt;/code&gt;, will just be ignored in the latter case. We can’t, however, just pass one parameter and expect it to be treated as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;element&lt;/code&gt; - order matters!&lt;/p&gt;
+
+&lt;p&gt;Cool, so, since we have a function, we can check that the map method works with it:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/array-mapping/map-with-callback.png&quot; alt=&quot;&amp;quot;A devtools console showing that the map method works with the function we just defined.&amp;quot;&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice how I didn’t put parentheses when I passed &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squareElement&lt;/code&gt; as a parameter to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map&lt;/code&gt;? That’s because I want to pass the entire function, not just the value it would return. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squareElement()&lt;/code&gt; would call it and give me its return value. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squareElement&lt;/code&gt; passes the function itself. Neat, right?&lt;/p&gt;
+
+&lt;h2 id=&quot;arrow-functions&quot;&gt;Arrow functions&lt;/h2&gt;
+
+&lt;p&gt;Small reminder - any function can be written as an arrow function. Let’s make a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squareElementArrow&lt;/code&gt; function which does the exact same but in the new syntax:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squareElementArrow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We could make it a bit more concise - if an arrow function has a single argument, it doesn’t need parentheses around it, and if the only thing in the body is the return statement, it doesn’t need curly braces nor the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt; keyword. So, the more concise version:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;squareElementArrow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Starting to look like you’ve seen the syntax before? Let’s test it out, make sure it again works the same:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/array-mapping/map-callback-arrow.png&quot; alt=&quot;&amp;quot;A devtools console showing that the map method works the same with the arrow syntax.&amp;quot;&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Perfect. Onto the last piece of the puzzle…&lt;/p&gt;
+
+&lt;h2 id=&quot;anonymous-functions&quot;&gt;Anonymous functions&lt;/h2&gt;
+
+&lt;p&gt;Okay, this one will be what ties it all together into the syntax you’re used to seeing in katas. Anonymous functions are functions that are defined without a name - they’ll only need to be used in one place, so there’s no point in assigning them one. Sounding like our squaring functions….?&lt;/p&gt;
+
+&lt;p&gt;Let’s see how we could create an anonymous function from our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squareElementArrow&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That simple. Just don’t give it a name, don’t assign it to anything. However, “element” is not very descriptive as a parameter name - if we are squaring something, we are expecting it to be a number. So, new revision:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We could call it anything, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wkdjfkwdjf&lt;/code&gt; and it would work the exact same, as, since it is passed to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;map()&lt;/code&gt; function, it’ll know that the first parameter the callback function passed to it should take is the current element. So, in the end,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/array-mapping/map-anon.png&quot; alt=&quot;&amp;quot;A devtools console showing that the map method works the same with the anonymous arrow function.&amp;quot;&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And, just to stress that we don’t &lt;em&gt;have&lt;/em&gt; to use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; element in the body of our callback function and it works just the same, as well as that the parameter names don’t matter but the order does:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/array-mapping/map-anon-proof.png&quot; alt=&quot;&amp;quot;A devtools console showing that the map method works the same with the anonymous arrow function but different parameter names.&amp;quot;&quot; class=&quot;img-fluid&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And that’s it! Hope that cleared some things up, let me know if you have any questions.&lt;/p&gt;</content><author><name></name></author><summary type="html">When the map() isn&apos;t clear enough and you need a guide.</summary></entry><entry><title type="html">The Simplest Way to Keep Track of Your Tasks</title><link href="https://mai-soup.github.io/2023/02/03/task-tracking.html" rel="alternate" type="text/html" title="The Simplest Way to Keep Track of Your Tasks" /><published>2023-02-03T00:00:00+00:00</published><updated>2023-02-03T00:00:00+00:00</updated><id>https://mai-soup.github.io/2023/02/03/task-tracking</id><content type="html" xml:base="https://mai-soup.github.io/2023/02/03/task-tracking.html">&lt;p&gt;It is incredibly easy to get lost in a mountainous to-do list as a student.&lt;/p&gt;
 
 &lt;p&gt;I mean, we have a schedule for lectures, labs, and tutorials, during which we keep getting new assessments, reading material, reports to write, projects… not to mention revising one’s own notes, which is usually left until right before the exams week, since there’s no time to do it before then. The fact that some of these tasks get forgotten or we misremember an assignment’s deadline is inevitable. Or is it?&lt;/p&gt;
 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<h1>, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/gruvbox-light.css">
+    <title>Array methods
+</title>
+</head>
+<body class="py-3">
+    <div class="container-fluid" id="container-main">
+        <nav class="mb-3  text-center">
+    
+        <a href="/" >Home</a>
+    
+        <a href="/about.html" >About</a>
+    
+        <a href="/portfolio.html" >Portfolio</a>
+    
+        <a href="/blog.html" >Thoughts</a>
+    
+        <a href="/bookshelf.html" >Bookshelf</a>
+    
+        <a href="/gallery/" >Gallery</a>
+    
+</nav>
+        <div class="text-start">
+  <h1>Array methods
+</h1>
+  <small id="post-date">26 Jun 2023 </small>
+  <p id="post-tags">
+    
+  </p>
+
+  <div id="post-content">
+    <blockquote>
+  <p>A new coder with spirit, not shy,</p>
+
+  <p>Finds array methods to untie.</p>
+
+  <p>With functions unnamed,</p>
+
+  <p>It’s a game unrestrained,</p>
+
+  <p>But they’ll master it by and by.</p>
+
+  <p>—ChatGPT</p>
+</blockquote>
+
+<p>Ah, array methods, beloved. My archnemesis until just a couple months ago. There’s a few concepts to understand before it really “clicks”, so here we go, one at a time.</p>
+
+<h2 id="callback-functions">Callback functions</h2>
+
+<p>If we look at the MDN docs for any of the array methods (I’ll use <code class="language-plaintext highlighter-rouge">Array.prototype.map()</code> as an example), we notice a few terms explaining the parameters for it:</p>
+
+<p><img src="/images/array-mapping/mdn-callback.png" alt="Excerpt from MDN talking about the parameters for Array.map()&quot;" class="img-fluid" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">callbackFn</code> - callback function. In Higher Order Functions (functions which can take other functions as a parameter), the parameters that are functions are called callback functions. Imagine the HOF “calling it back”, being like hey, I’ve done my job, now it’s up to you. The HOF can invoke any of the callback functions provided to it.</p>
+
+<p>The docs state that the callback function passed to <code class="language-plaintext highlighter-rouge">Array.map()</code> is executed for each element in the array and the returned value is added to the new array, which will be returned by <code class="language-plaintext highlighter-rouge">Array.map()</code> itself.</p>
+
+<p>Let’s try writing our own mapping function to see what this really looks like in practice. I’ll add it as a property on the <code class="language-plaintext highlighter-rouge">Array.prototype</code> - doesn’t really matter what a prototype is right now, in short, I am making sure I can call it like <code class="language-plaintext highlighter-rouge">arr.map()</code>, same as the original map function. The <code class="language-plaintext highlighter-rouge">this</code> keyword here refers to the array we call the method on.</p>
+
+<p>For simplicity’s sake, right now I will only care about the first argument that <code class="language-plaintext highlighter-rouge">callbackFn</code> accepts, that is, <code class="language-plaintext highlighter-rouge">element</code> - the current element we are looking at.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">newMap</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callbackFn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">newArray</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">newElement</span> <span class="o">=</span> <span class="nx">callbackFn</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="nx">newArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newElement</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">newArray</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Right, let’s try using this new method on an array - don’t worry about the syntax of anything inside the <code class="language-plaintext highlighter-rouge">map</code> or <code class="language-plaintext highlighter-rouge">newMap</code> calls just yet, I just want to show that they both do the same thing.</p>
+
+<p><img src="/images/array-mapping/map-and-newmap.png" alt="&quot;A devtools console showing that the two methods produce the same output, mapping the array's elements to their squares.&quot;" class="img-fluid" /></p>
+
+<p>So far so good. I was trying to square each element of the starting array, and both methods returned the expected result.</p>
+
+<h2 id="okay-but-what-does-callbackfn-look-like-really">Okay, but what does <code class="language-plaintext highlighter-rouge">callbackFn</code> look like really?</h2>
+
+<p>Just like any other function. You just have to remember the parameters it takes - <code class="language-plaintext highlighter-rouge">element</code>, <code class="language-plaintext highlighter-rouge">index</code>, and…. uh whatever the third one was. <code class="language-plaintext highlighter-rouge">array</code>. Right. Never had to use that one, er…. I’ll take a bit of a leap and assume you can not worry about that one either. <code class="language-plaintext highlighter-rouge">element</code> is the current element the mapping function is working on, and <code class="language-plaintext highlighter-rouge">index</code> is its index. So we could define our squaring function as something like</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">squareElement</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">element</span> <span class="o">*</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Or, since we are not actually using the <code class="language-plaintext highlighter-rouge">index</code> parameter:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">squareElement</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">element</span> <span class="o">*</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">index</code> parameter, if also passed to <code class="language-plaintext highlighter-rouge">squareElement</code>, will just be ignored in the latter case. We can’t, however, just pass one parameter and expect it to be treated as <code class="language-plaintext highlighter-rouge">index</code> not <code class="language-plaintext highlighter-rouge">element</code> - order matters!</p>
+
+<p>Cool, so, since we have a function, we can check that the map method works with it:</p>
+
+<p><img src="/images/array-mapping/map-with-callback.png" alt="&quot;A devtools console showing that the map method works with the function we just defined.&quot;" class="img-fluid" /></p>
+
+<p>Notice how I didn’t put parentheses when I passed <code class="language-plaintext highlighter-rouge">squareElement</code> as a parameter to <code class="language-plaintext highlighter-rouge">map</code>? That’s because I want to pass the entire function, not just the value it would return. <code class="language-plaintext highlighter-rouge">squareElement()</code> would call it and give me its return value. <code class="language-plaintext highlighter-rouge">squareElement</code> passes the function itself. Neat, right?</p>
+
+<h2 id="arrow-functions">Arrow functions</h2>
+
+<p>Small reminder - any function can be written as an arrow function. Let’s make a <code class="language-plaintext highlighter-rouge">squareElementArrow</code> function which does the exact same but in the new syntax:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">squareElementArrow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">element</span> <span class="o">*</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We could make it a bit more concise - if an arrow function has a single argument, it doesn’t need parentheses around it, and if the only thing in the body is the return statement, it doesn’t need curly braces nor the <code class="language-plaintext highlighter-rouge">return</code> keyword. So, the more concise version:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">squareElementArrow</span> <span class="o">=</span> <span class="nx">element</span> <span class="o">=&gt;</span> <span class="nx">element</span> <span class="o">*</span> <span class="nx">element</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Starting to look like you’ve seen the syntax before? Let’s test it out, make sure it again works the same:</p>
+
+<p><img src="/images/array-mapping/map-callback-arrow.png" alt="&quot;A devtools console showing that the map method works the same with the arrow syntax.&quot;" class="img-fluid" /></p>
+
+<p>Perfect. Onto the last piece of the puzzle…</p>
+
+<h2 id="anonymous-functions">Anonymous functions</h2>
+
+<p>Okay, this one will be what ties it all together into the syntax you’re used to seeing in katas. Anonymous functions are functions that are defined without a name - they’ll only need to be used in one place, so there’s no point in assigning them one. Sounding like our squaring functions….?</p>
+
+<p>Let’s see how we could create an anonymous function from our <code class="language-plaintext highlighter-rouge">squareElementArrow</code> function:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span> <span class="o">=&gt;</span> <span class="nx">element</span> <span class="o">*</span> <span class="nx">element</span>
+</code></pre></div></div>
+
+<p>That simple. Just don’t give it a name, don’t assign it to anything. However, “element” is not very descriptive as a parameter name - if we are squaring something, we are expecting it to be a number. So, new revision:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">num</span> <span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span>
+</code></pre></div></div>
+
+<p>We could call it anything, <code class="language-plaintext highlighter-rouge">wkdjfkwdjf</code> and it would work the exact same, as, since it is passed to the <code class="language-plaintext highlighter-rouge">map()</code> function, it’ll know that the first parameter the callback function passed to it should take is the current element. So, in the end,</p>
+
+<p><img src="/images/array-mapping/map-anon.png" alt="&quot;A devtools console showing that the map method works the same with the anonymous arrow function.&quot;" class="img-fluid" /></p>
+
+<p>And, just to stress that we don’t <em>have</em> to use the <code class="language-plaintext highlighter-rouge">index</code> element in the body of our callback function and it works just the same, as well as that the parameter names don’t matter but the order does:</p>
+
+<p><img src="/images/array-mapping/map-anon-proof.png" alt="&quot;A devtools console showing that the map method works the same with the anonymous arrow function but different parameter names.&quot;" class="img-fluid" /></p>
+
+<p>And that’s it! Hope that cleared some things up, let me know if you have any questions.</p>
+
+  </div>
+</div>
+    </div>
+</body>
+</html>
