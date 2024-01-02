@@ -1,4 +1,4 @@
-<nav class="mb-3 {{ include.extraclass | default: '' }} text-center">
+<nav>
     {% for item in site.data.navigation %}
         <a href="{{ site.baseurl }}{{ item.link }}" {% if page.url == item.link %} class="nav-link-current" {% endif %}>{{ item.name }}</a>
     {% endfor %}

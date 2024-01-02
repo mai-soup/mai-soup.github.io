@@ -1,23 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap");
 
-$color-bg: #fffbfc;
-$color-text: #1d1905;
-$color-accent: #c05746;
-$color-accent-dark: #893b2f;
-$color-link: #2b3a67;
-$primary: $color-link;
+$color-bg: #000;
+$color-text: #fff;
+$color-accent: #89fc00;
+$color-accent-dark: #f5b700;
+$primary: #dc0073;
+$secondary: #00a1e4;
+$color-link: $secondary;
 
 // gallery grid variables
 $image-size: 230px;
 $grid-gap: 10px;
 
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: "Roboto Mono", Courier, monospace;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #container-main {
   width: 70%;
   max-width: 80ch;
+  margin: 0 auto;
 }
 
 #img-home {
   max-height: 55vh;
+  width: 100%;
+  object-fit: contain;
 }
 
 #post-date {
@@ -35,7 +51,7 @@ $grid-gap: 10px;
 }
 
 h1 {
-  // @extend .text-center;
+  text-align: center;
 }
 
 blockquote {
@@ -71,13 +87,16 @@ nav {
   // font-family: $headings-font-family;
   .nav-link-current {
     color: $color-bg;
-    background-color: $color-accent;
+    background-color: $primary;
   }
 }
 
 a {
+  color: $color-link;
+
   &:hover {
-    // background-color: $link-color;
+    background-color: $color-link;
+    color: $color-bg;
   }
 
   display: inline-block;
