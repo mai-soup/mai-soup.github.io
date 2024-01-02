@@ -1,29 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap");
-#container-main { width: 70%; max-width: 80ch; }
+body { background-color: #000; color: #fff; font-family: "Roboto Mono", Courier, monospace; }
 
-#img-home { max-height: 55vh; }
+nav { display: flex; align-items: center; justify-content: center; }
+
+#container-main { width: 70%; max-width: 80ch; margin: 0 auto; }
+
+#img-home { max-height: 55vh; width: 100%; object-fit: contain; }
 
 #post-date { margin-bottom: auto; }
 
-#post-tags a:visited, #post-tags a:link { color: #893b2f; }
+#post-tags a:visited, #post-tags a:link { color: #f5b700; }
 
-#post-tags a:hover { color: #fffbfc; }
+#post-tags a:hover { color: #000; }
 
-blockquote { border-left: 5px solid #c05746; padding-left: 10px; }
+h1 { text-align: center; }
+
+blockquote { border-left: 5px solid #89fc00; padding-left: 10px; }
 
 table { width: 100%; margin-top: 1em; margin-bottom: 1em; }
 
-table tbody { border-top: 1px solid #1d1905; border-bottom: 1px solid #1d1905; }
+table tbody { border-top: 1px solid #fff; border-bottom: 1px solid #fff; }
 
-table th { border-bottom: 2px solid #1d1905; }
+table th { border-bottom: 2px solid #fff; }
 
 table th, table td { padding: 0.25em; }
 
 figure { max-width: 100%; }
 
-nav .nav-link-current { color: #fffbfc; background-color: #c05746; }
+nav .nav-link-current { color: #000; background-color: #dc0073; }
 
-a { display: inline-block; padding: 3px; }
+a { color: #00a1e4; display: inline-block; padding: 3px; }
+
+a:hover { background-color: #00a1e4; color: #000; }
 
 .ul-no-dec { list-style-type: none; padding-left: 0; }
 
@@ -57,7 +65,7 @@ section.bio div.pfp img { width: 100%; height: 100%; object-fit: cover; border-r
 
 section.bio div.profile-info p.username { font-size: 1.5em; display: inline-block; padding-right: 1em; }
 
-section.bio div.profile-info button { background-color: #2b3a67; color: #fffbfc; font-weight: bold; width: 8em; height: 2em; border: unset; border-radius: 5px; }
+section.bio div.profile-info button { background-color: #00a1e4; color: #000; font-weight: bold; width: 8em; height: 2em; border: unset; border-radius: 5px; }
 
 section.bio div.profile-info p.name { font-weight: 600; margin-bottom: 0; }
 
