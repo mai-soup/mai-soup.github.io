@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap");
+@import url("https://api.fonts.coollabs.io/css2?family=Roboto+Mono&display=swap");
 body { background-color: #000; color: #fff; font-family: "Roboto Mono", Courier, monospace; }
 
 nav { display: flex; align-items: center; justify-content: center; }
