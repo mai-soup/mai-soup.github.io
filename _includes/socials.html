@@ -1,0 +1,7 @@
+<div class="socials-container">
+  {% for item in site.data.socials %}
+  <a href="{{ item.url }}" class="social {{ item.name | downcase }}"
+    >{{ item.name }}</a
+  >
+  {% endfor %}
+</div>
