@@ -118,3 +118,39 @@ a {
   display: inline-block;
   padding: 3px;
 }
+
+.socials-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  .mastodon {
+    --brand-color: #563acc;
+  }
+
+  .github {
+    --brand-color: #fff;
+  }
+
+  .linkedin {
+    --brand-color: #0077b5;
+  }
+
+  a.social {
+    --_brand-color: var(--brand-color, red);
+
+    border: 2px solid var(--_brand-color);
+    background-color: $color-bg;
+    color: $color-text;
+    transition: box-shadow 0.2s ease-in-out;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: $color-bg;
+      box-shadow: 0 0 16px var(--_brand-color);
+    }
+  }
+}
