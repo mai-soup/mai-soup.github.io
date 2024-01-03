@@ -6,5 +6,5 @@
   link: /portfolio.html
 - name: bookshelf
   link: /bookshelf.html
-- name: gallery
-  link: /gallery/
+# - name: gallery
+#   link: /gallery/
