@@ -8,7 +8,7 @@ Hey there! My name is Maijs Garais (_my's gah-rye-s_, IPA: /maɪjs garaɪs/; I a
 
 When I'm not writing code, I'm usually reading, walking unnecessarily long trails, playing videogames, or hanging out at one of the tech meetups in town.
 
-You can find me on [LinkedIn](https://www.linkedin.com/in/maijs/) and [GitHub](https://github.com/mai-soup).
+{% include socials.html %}
 
 ## Site information
 
