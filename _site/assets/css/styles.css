@@ -3,6 +3,32 @@ body { background-color: #000; color: #fff; font-family: "Roboto Mono", Courier,
 
 nav { display: flex; align-items: center; justify-content: center; }
 
+.glitch-wrapper { text-align: center; }
+
+.stack { display: grid; grid-template-columns: 1fr; }
+
+.stack span { font-weight: bold; grid-row-start: 1; grid-column-start: 1; font-size: 2rem; --stack-height: calc(100% / var(--stacks) - 1px); --inverse-index: calc(calc(var(--stacks) - 1) - var(--index)); --clip-top: calc(var(--stack-height) * var(--index)); --clip-bottom: calc(var(--stack-height) * var(--inverse-index)); clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0); animation: stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse; }
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack { 0% { opacity: 0;
+    transform: translateX(-25%);
+    text-shadow: -2px 3px 0 #ff0000, 2px -3px 0 #00ffff; }
+  60% { opacity: 0.5;
+    transform: translateX(25%); }
+  80% { transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 #ff0000, -2px 3px 0 #00ffff; }
+  100% { text-shadow: none; } }
+
+@keyframes glitch { 0% { text-shadow: -2px 3px 0 #ff0000, 2px -3px 0 #00ffff;
+    transform: translate(var(--glitch-translate)); }
+  2% { text-shadow: 2px -3px 0 #ff0000, -2px 3px 0 #00ffff; }
+  4%, 100% { text-shadow: none;
+    transform: none; } }
+
 #container-main { width: 70%; max-width: 80ch; margin: 0 auto; }
 
 #img-home { max-height: 55vh; width: 100%; object-fit: contain; }
@@ -27,11 +53,11 @@ table th, table td { padding: 0.25em; }
 
 figure { max-width: 100%; }
 
-nav .nav-link-current { color: #000; background-color: #dc0073; }
+nav .nav-link-current { color: #000; background-color: #ff0000; }
 
-a { color: #00a1e4; display: inline-block; padding: 3px; }
+a { color: #00ffff; display: inline-block; padding: 3px; }
 
-a:hover { background-color: #00a1e4; color: #000; }
+a:hover { background-color: #00ffff; color: #000; }
 
 .ul-no-dec { list-style-type: none; padding-left: 0; }
 
@@ -65,7 +91,7 @@ section.bio div.pfp img { width: 100%; height: 100%; object-fit: cover; border-r
 
 section.bio div.profile-info p.username { font-size: 1.5em; display: inline-block; padding-right: 1em; }
 
-section.bio div.profile-info button { background-color: #00a1e4; color: #000; font-weight: bold; width: 8em; height: 2em; border: unset; border-radius: 5px; }
+section.bio div.profile-info button { background-color: #00ffff; color: #000; font-weight: bold; width: 8em; height: 2em; border: unset; border-radius: 5px; }
 
 section.bio div.profile-info p.name { font-weight: 600; margin-bottom: 0; }
 
