@@ -1,14 +1,10 @@
-- name: Home
+- name: home
   link: /
-- name: About
+- name: about
   link: /about.html
-- name: Portfolio
+- name: portfolio
   link: /portfolio.html
-- name: Thoughts
-  link: /blog.html
-# - name: To-Do
-#   link: /todo.html
-- name: Bookshelf
+- name: bookshelf
   link: /bookshelf.html
-- name: Gallery
+- name: gallery
   link: /gallery/
