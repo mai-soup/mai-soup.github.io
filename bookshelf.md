@@ -12,6 +12,7 @@ A collection of resources online and offline I've utilised to further my knowled
 
 Here's the courses I've gotten certifications for:
 
+- [Coyotiv School of Software Engineering 13-week full-stack software engineering course.](https://coyotiv.com/school-of-software-engineering) I was part of Cohort 12, and despite already having experience in coding learned a lot about the process of building an application from planning to deployment, as well as how to think like a senior engineer.
 - Several [FreeCodeCamp](https://www.freecodecamp.org/) certifications, currently up to and including Scientific Computing with Python.
 - [PHP for Beginners - Become a PHP Master - CMS Project](https://www.udemy.com/certificate/UC-82d18ec7-f503-42e1-9faa-dc2d09cf0c8e/) on Udemy - maybe not the best-crafted coding course out there, but helped me get finally dip my feet into coding in PHP and spark an interest in web development.
 - [The Web Developer Bootcamp 2023](https://www.udemy.com/certificate/UC-5faed6db-8c99-423c-83d1-491780de194f/) by Colt Steele - an incredibly well-crafted web development course that covered everything from the very basics of HTML and CSS to using Node and Express and deploying apps.
@@ -33,3 +34,5 @@ Some of these were recommended to me by my professors, others found in bibliogra
 - _The Mythical Man-Month_ by Fred Brooks
 - _The Cathedral and the Bazaar_ by Eric S. Raymond
 - _The Design of Everyday Things_ by Donald A. Norman
+- _Software Craftsmanship: The New Imperative_ by Pete McBreen
+- _The Phoenix Project_ by George Spafford, Gene Kim, and Kevin Behr
